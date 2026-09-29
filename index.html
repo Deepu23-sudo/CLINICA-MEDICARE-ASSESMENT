@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Take the 2-Minute Hair Test with Clinica Medicare and understand your current hair-loss pattern."
+    >
+
+    <title>Clinica Medicare | 2-Minute Hair Test</title>
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+<a href="#" class="brand" aria-label="Clinica Medicare">
+
+    <img
+        src="clinica-medicare-logo.png"
+        alt="Clinica Medicare - Homeopathy & Aesthetic"
+        class="brand-logo"
+    >
+
+</a>
+        <!-- Language Switch -->
+
+        <div
+            class="language-switch"
+            aria-label="Language selection"
+        >
+
+            <button
+                type="button"
+                class="language-btn active"
+                data-language="en"
+            >
+                English
+            </button>
+
+
+            <button
+                type="button"
+                class="language-btn"
+                data-language="hi"
+            >
+                हिंदी
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main>
+
+
+        <!-- =====================================
+             HERO SECTION
+        ====================================== -->
+
+        <section class="hair-test-hero">
+
+
+            <!-- HERO CONTENT -->
+
+            <div class="hero-content">
+
+                <p
+                    class="eyebrow"
+                    data-i18n="eyebrow"
+                >
+                    CLINICA MEDICARE · HAIR CARE
+                </p>
+
+
+                <h1
+                    data-i18n="heroTitle"
+                >
+                    Take the
+                    <em>2-Minute</em>
+                    Hair Test
+                </h1>
+
+
+                <p
+                    class="hero-description"
+                    data-i18n="heroDescription"
+                >
+                    Answer a few simple questions to understand
+                    your current hair-loss pattern and discover
+                    the next step toward a professional evaluation.
+                </p>
+
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="startHairTest"
+                    data-i18n="startTest"
+                >
+                    Start Hair Test →
+                </button>
+
+
+                <p
+                    class="hero-note"
+                    data-i18n="heroNote"
+                >
+                    Private assessment · About 2 minutes ·
+                    No product purchase required
+                </p>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 HERO VISUAL
+            ====================================== -->
+
+            <div class="hero-visual">
+
+                <div class="hero-visual-card">
+
+
+                    <span
+                        class="visual-badge"
+                        data-i18n="visualBadge"
+                    >
+                        2 MINUTE ASSESSMENT
+                    </span>
+
+
+                    <h2
+                        data-i18n="visualTitle"
+                    >
+                        Understand your hair-loss pattern.
+                    </h2>
+
+
+                    <p
+                        data-i18n="visualDescription"
+                    >
+                        A simple guided assessment designed
+                        to help you understand your next step.
+                    </p>
+
+
+                    <div class="visual-info">
+
+                        <span>
+                            Men · Stage 1–7
+                        </span>
+
+                        <span>
+                            Women · Stage 1–4
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         HAIR TEST MODAL
+    ========================================== -->
+
+    <div
+        class="test-overlay"
+        id="hairTestModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="hair-test-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="hairTestTitle"
+        >
+
+
+            <!-- =====================================
+                 MODAL HEADER
+            ====================================== -->
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p
+                        class="modal-step-label"
+                        id="modalStepLabel"
+                    >
+                        STEP 1
+                    </p>
+
+
+                    <h2 id="hairTestTitle">
+                        2-Minute Hair Test
+                    </h2>
+
+
+                    <p id="hairTestSubtitle">
+                        Let's start with a few quick details.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeHairTest"
+                    aria-label="Close"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 PROGRESS BAR
+            ====================================== -->
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="progressBar"
+                ></div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 STEP 1 — GENDER
+            ====================================== -->
+
+            <section
+                class="test-step active"
+                data-step="0"
+            >
+
+                <p
+                    class="step-label"
+                    data-i18n="step1"
+                >
+                    STEP 1
+                </p>
+
+
+                <h3
+                    data-i18n="genderQuestion"
+                >
+                    Which assessment would you like to take?
+                </h3>
+
+
+                <div class="choice-grid two-columns">
+
+
+                    <!-- MEN -->
+
+                    <button
+                        type="button"
+                        class="choice-card gender-choice"
+                        data-gender="men"
+                    >
+
+                        <strong
+                            data-i18n="men"
+                        >
+                            Men
+                        </strong>
+
+
+                        <span
+                            data-i18n="menDescription"
+                        >
+                            Male-pattern hair loss assessment
+                        </span>
+
+                    </button>
+
+
+
+                    <!-- WOMEN -->
+
+                    <button
+                        type="button"
+                        class="choice-card gender-choice"
+                        data-gender="women"
+                    >
+
+                        <strong
+                            data-i18n="women"
+                        >
+                            Women
+                        </strong>
+
+
+                        <span
+                            data-i18n="womenDescription"
+                        >
+                            Female-pattern hair thinning assessment
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 STEP 2 — STAGE SELECTION
+            ====================================== -->
+
+            <section
+                class="test-step"
+                data-step="1"
+            >
+
+                <p
+                    class="step-label"
+                    data-i18n="step2"
+                >
+                    STEP 2
+                </p>
+
+
+                <h3
+                    data-i18n="stageQuestion"
+                >
+                    Which stage most closely matches your
+                    current hair loss?
+                </h3>
+
+
+                <!--
+                    Stage cards are generated
+                    dynamically by JavaScript.
+                -->
+
+                <div
+                    class="stage-grid"
+                    id="stageGrid"
+                ></div>
+
+
+                <div class="step-actions">
+
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        data-back-step="0"
+                        data-i18n="back"
+                    >
+                        Back
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        id="stageContinue"
+                        data-i18n="continue"
+                    >
+                        Continue →
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 STEP 3 — PHOTO UPLOAD
+            ====================================== -->
+
+            <section
+                class="test-step"
+                data-step="2"
+            >
+
+                <p
+                    class="step-label"
+                    data-i18n="step3"
+                >
+                    STEP 3
+                </p>
+
+
+                <h3
+                    data-i18n="photoQuestion"
+                >
+                    Upload a clear photo of your scalp.
+                </h3>
+
+
+                <div class="photo-upload-box">
+
+
+                    <p
+                        data-i18n="photoDescription"
+                    >
+                        Good lighting and a clear view of
+                        the hair pattern work best.
+                    </p>
+
+
+                    <label
+                        for="scalpPhoto"
+                        class="upload-button"
+                        data-i18n="choosePhoto"
+                    >
+                        Choose Photo
+                    </label>
+
+
+                    <input
+                        type="file"
+                        id="scalpPhoto"
+                        accept="image/*"
+                    >
+
+
+                    <img
+                        src=""
+                        alt="Scalp photo preview"
+                        id="photoPreview"
+                        class="photo-preview"
+                    >
+
+                </div>
+
+
+                <div class="step-actions">
+
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        data-back-step="1"
+                        data-i18n="back"
+                    >
+                        Back
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        id="photoContinue"
+                        data-i18n="continue"
+                    >
+                        Continue →
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 STEP 4 — QUESTIONS
+            ====================================== -->
+
+            <section
+                class="test-step"
+                data-step="3"
+            >
+
+                <p
+                    class="step-label"
+                    id="questionCounter"
+                >
+                    QUESTION 1 OF 7
+                </p>
+
+
+                <h3
+                    id="questionText"
+                >
+                    How would you describe your current
+                    hair fall?
+                </h3>
+
+
+                <!--
+                    Question options generated by JS.
+                -->
+
+                <div
+                    class="choice-grid two-columns"
+                    id="answerGrid"
+                ></div>
+
+
+                <div class="step-actions">
+
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        id="questionBack"
+                        data-i18n="back"
+                    >
+                        Back
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        id="questionContinue"
+                        data-i18n="continue"
+                    >
+                        Continue →
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 STEP 5 — LEAD CAPTURE
+            ====================================== -->
+
+            <section
+                class="test-step"
+                data-step="4"
+            >
+
+                <p
+                    class="step-label"
+                    data-i18n="almostThere"
+                >
+                    ALMOST THERE
+                </p>
+
+
+                <h3
+                    data-i18n="leadTitle"
+                >
+                    Your hair assessment is ready.
+                </h3>
+
+
+                <p
+                    class="lead-description"
+                    data-i18n="leadDescription"
+                >
+                    Enter your details to view your personalized
+                    hair assessment and get the right next step
+                    from Clinica Medicare.
+                </p>
+
+
+
+                <!-- LEAD FORM -->
+
+                <form
+                    id="leadForm"
+                    class="lead-form"
+                >
+
+
+                    <!-- FULL NAME -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="fullName"
+                            data-i18n="fullNameLabel"
+                        >
+                            Full Name
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            required
+                            data-placeholder="fullNamePlaceholder"
+                        >
+
+                    </div>
+
+
+
+                    <!-- WHATSAPP -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="whatsappNumber"
+                            data-i18n="whatsappLabel"
+                        >
+                            WhatsApp Number
+                        </label>
+
+
+                        <input
+                            type="tel"
+                            id="whatsappNumber"
+                            name="whatsappNumber"
+                            placeholder="Enter your WhatsApp number"
+                            inputmode="tel"
+                            required
+                            data-placeholder="whatsappPlaceholder"
+                        >
+
+                    </div>
+
+
+
+                    <!-- AGE -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="ageGroup"
+                            data-i18n="ageLabel"
+                        >
+                            Age Group
+                        </label>
+
+
+                        <select
+                            id="ageGroup"
+                            name="ageGroup"
+                            required
+                        >
+
+                            <option
+                                value=""
+                                data-i18n="agePlaceholder"
+                            >
+                                Select age group
+                            </option>
+
+
+                            <option value="under-18">
+                                Under 18
+                            </option>
+
+
+                            <option value="18-24">
+                                18–24
+                            </option>
+
+
+                            <option value="25-34">
+                                25–34
+                            </option>
+
+
+                            <option value="35-44">
+                                35–44
+                            </option>
+
+
+                            <option value="45-plus">
+                                45+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- CITY -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="city"
+                            data-i18n="cityLabel"
+                        >
+                            City
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="city"
+                            name="city"
+                            placeholder="Enter your city"
+                            required
+                            data-placeholder="cityPlaceholder"
+                        >
+
+                    </div>
+
+
+
+                    <!-- CONSENT -->
+
+                    <label class="consent-row">
+
+                        <input
+                            type="checkbox"
+                            id="consent"
+                            required
+                        >
+
+
+                        <span data-i18n="consent">
+                            I agree to be contacted by Clinica
+                            Medicare regarding my hair assessment
+                            and consultation.
+                        </span>
+
+                    </label>
+
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="primary-btn full-width"
+                        data-i18n="viewAssessment"
+                    >
+                        View My Hair Assessment →
+                    </button>
+
+                </form>
+
+
+
+                <!-- BACK -->
+
+                <div class="step-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        data-back-step="3"
+                        data-i18n="back"
+                    >
+                        Back
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 STEP 6 — RESULT
+            ====================================== -->
+
+            <section
+                class="test-step result-step"
+                data-step="5"
+            >
+
+                <div class="assessment-report-header">
+                    <div>
+                        <p class="step-label" data-i18n="assessment">YOUR ASSESSMENT</p>
+                        <h2 class="assessment-report-title">Assessment Report</h2>
+                    </div>
+                    <div class="assessment-report-badge">Clinica Medicare</div>
+                </div>
+
+                <div class="result-profile">
+                    <div class="result-profile-copy">
+                        <p class="result-eyebrow">YOUR CURRENT ASSESSMENT</p>
+                        <h3 id="resultPatientName">Your Assessment</h3>
+                        <p class="result-intro">Based on the information you provided, your current hair-loss pattern is most closely aligned with:</p>
+
+                        <div class="result-stage-row">
+                            <div class="result-stage" id="resultStage">Stage 1</div>
+                            <span class="result-stage-type" id="resultType">Hair Loss Assessment</span>
+                        </div>
+
+                        <h4 id="resultTitle">Minimal Hair Loss</h4>
+                        <p class="result-description" id="resultDescription"></p>
+                    </div>
+
+                    <div class="result-image-wrap">
+                        <img
+                            id="resultImage"
+                            class="result-image"
+                            src=""
+                            alt="Hair loss stage assessment"
+                        >
+                    </div>
+                </div>
+
+                <div class="result-summary-grid">
+                    <div class="result-summary-card result-summary-card--highlight">
+                        <span class="summary-label">ASSESSMENT SUMMARY</span>
+                        <h4 id="resultSummaryTitle">Your current pattern</h4>
+                        <p id="resultSummaryText">A professional hair evaluation can help understand the pattern and appropriate next steps.</p>
+                    </div>
+
+                    <div class="result-summary-card">
+                        <span class="summary-label">WHAT THIS MEANS</span>
+                        <p id="resultMeaningText">This online assessment provides an initial indication based on your responses. It is not a clinical diagnosis.</p>
+                    </div>
+                </div>
+
+                <div class="result-next-step">
+                    <div>
+                        <span class="summary-label">RECOMMENDED NEXT STEP</span>
+                        <h4>Get a professional hair evaluation</h4>
+                        <p>Discuss your assessment with a hair specialist to understand your hair and scalp concerns in more detail.</p>
+                    </div>
+                    <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="whatsapp-button"
+                        id="whatsappLink"
+                        data-i18n="whatsapp"
+                    >
+                        Talk to a Hair Specialist on WhatsApp →
+                    </a>
+                </div>
+
+                <p
+                    class="result-disclaimer"
+                    data-i18n="disclaimer"
+                >
+                    This online assessment is for guidance and does not replace a clinical diagnosis.
+                </p>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
